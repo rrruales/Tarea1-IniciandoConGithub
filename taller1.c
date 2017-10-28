@@ -3,6 +3,8 @@
 
 int getline(char line[], int maxline);
 void copy(char to[], char from[]);
+int lower(int c);
+void conta(char to[])
 
 main()
 {
@@ -19,6 +21,10 @@ main()
 		}
 	if (max > 0) /* there was a line */
 		printf("%s", longest);
+	lower(longest);
+	printf ("%s", longest);
+	contar(longest);
+	printf ("%s", longest);
 	return 0;
 }
 
@@ -43,3 +49,20 @@ void copy(char to[], char from[])
 	while ((to[i] = from[i]) != '\0')
 		++i;
 }
+
+int lower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+	return c + 'a' - 'A';
+	else
+	return c;
+}
+
+void conta(char to[])
+{
+	long nc;
+	nc = 0;
+	while(getchar() != EOF)
+		++nc;
+	printf("%ld\n", nc);
+} 
